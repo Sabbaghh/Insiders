@@ -1,0 +1,46 @@
+/* Original Template Fonts */
+
+/* Instrument Sans - headings */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Beatrice Trial - body text (local font files) */
+@font-face {
+  font-family: 'beatricetrial';
+  src: url("/assets/fonts/Beatrice/BeatriceTRIAL-Regular-BF64829e8f591fb.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'beatricetrial';
+  src: url("/assets/fonts/Beatrice/BeatriceTRIAL-Medium-BF64829e8f63463.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'beatricetrial';
+  src: url("/assets/fonts/Beatrice/BeatriceTRIAL-Semibold-BF64829e8f17d4c.ttf");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'beatricetrial';
+  src: url("/assets/fonts/Beatrice/BeatriceTRIAL-Bold-BF64829e8fd7dc6.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'beatricetrial';
+  src: url("/assets/fonts/Beatrice/BeatriceTRIAL-Light-BF64829e8f87d4e.ttf");
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Getaway - decorative/CTA font */
+@font-face {
+  font-family: 'getaway';
+  src: url('/assets/fonts/getaway/getaway.otf') format('opentype');
+}

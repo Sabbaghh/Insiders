@@ -1,0 +1,152 @@
+"use client";
+import { useRef, useCallback } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import hasPinContent from "@/lib/animation/hasPinContent";
+import { ActionBtnType } from "@/types";
+import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+import { useLayout } from "@/context/app.context";
+import { cn } from "@/lib/utils";
+import BranAboutArea from "../about/BranAboutArea";
+
+type Props = {
+  title: string;
+  sub_title: string;
+  description: string;
+  image: string;
+  video: string;
+  action_btn?: ActionBtnType;
+};
+
+const BrandingHero = ({
+  title,
+  sub_title,
+  description,
+  action_btn,
+}: Props) => {
+  const containerRef = useRef<HTMLDivElement>(null!);
+  const iconRef = useRef<HTMLDivElement>(null!);
+  const heroRef = useRef<HTMLElement>(null!);
+
+  const { layout } = useLayout();
+
+  const pinElement = useRef<HTMLDivElement>(null!);
+
+  useGSAP(
+    () => {
+      hasPinContent(pinElement.current);
+      hasFadeAnim();
+
+      const tl = gsap.timeline({ delay: 0.2 });
+      tl.from(".hero-title", {
+        y: 80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+      tl.from(
+        iconRef.current,
+        {
+          scale: 0,
+          opacity: 0,
+          rotation: -30,
+          duration: 1,
+          ease: "back.out(1.7)",
+        },
+        "-=0.6"
+      );
+    },
+    { scope: containerRef }
+  );
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!iconRef.current || !heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const moveX = ((e.clientX - rect.left - centerX) / centerX) * 25;
+    const moveY = ((e.clientY - rect.top - centerY) / centerY) * 25;
+    gsap.to(iconRef.current, {
+      x: moveX,
+      y: moveY,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (!iconRef.current) return;
+    gsap.to(iconRef.current, {
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.5)",
+    });
+  }, []);
+
+  const titleHtml = title
+    .replace(/<br\s*\/?>/gi, "<br />")
+    .replace(/\{|\}/g, "");
+
+  const titleClasses = cn(
+    "hero-title !font-getaway text-white uppercase !leading-[0.83] !font-normal text-[40px] mt-0 mb-0 sm:text-[40px] sm:mt-[-1px] sm:mb-[-7px] md:text-[65px] md:mt-[-1px] md:mb-[-5px] md:tracking-[-0.04em] xl:text-[85px] xl:mb-[-7px] 2xl:text-[150px] 2xl:mt-[-1px] 2xl:mb-[-12px]",
+    layout === "box" &&
+      "xxl:text-[105px] 2xl:mt-0 2xl:mb-[-7px] 2xl:max-w-[900px]"
+  );
+
+  return (
+    <section
+      ref={(el) => {
+        pinElement.current = el!;
+        heroRef.current = el!;
+      }}
+      className="hero-area z-10 pb-[250px] relative min-h-screen"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* YouTube Background Video */}
+      <div className="absolute w-full h-full -z-10 top-0 start-0 overflow-hidden">
+        <iframe
+          src="https://www.youtube.com/embed/ahy5o5nT4oI?version=3&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;hd=1&amp;loop=1&amp;playlist=ahy5o5nT4oI"
+          frameBorder="0"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250vh] h-[140vh] min-w-full min-h-full pointer-events-none"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      </div>
+      {/* Dark Overlay */}
+      <div className="absolute w-full h-full -z-[5] top-0 start-0 bg-black/60" />
+      <div className="container flex items-center justify-center min-h-screen">
+        <div className="w-full lg:w-[70%] relative">
+          {/* Logo Icon — parallax */}
+          <div
+            ref={iconRef}
+            className="absolute -top-[80px] right-[40px] md:-top-[120px] md:right-[80px] xl:-top-[160px] xl:right-[100px] z-0 pointer-events-none"
+          >
+            <Image
+              src="/assets/imgs/logoicon.png"
+              width={1000}
+              height={1000}
+              alt="INSIDERS icon"
+              unoptimized
+              className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] xl:w-[450px] xl:h-[450px] drop-shadow-lg opacity-80"
+            />
+          </div>
+          <div
+            ref={containerRef}
+            className="pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] 2xl:pb-[60px]"
+          >
+            <h1
+              className={titleClasses}
+              dangerouslySetInnerHTML={{ __html: titleHtml }}
+            />
+          </div>
+          <BranAboutArea aboutData={{ sub_title, description, action_btn }} />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BrandingHero;

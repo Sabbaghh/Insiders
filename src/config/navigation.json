@@ -1,0 +1,221 @@
+{
+  "header": [
+    {
+      "id": 1,
+      "name": "Moments We've Created",
+      "path": "#work"
+    },
+    {
+      "id": 2,
+      "name": "We Are Insiders",
+      "path": "#team"
+    },
+    {
+      "id": 3,
+      "name": "Our Edge",
+      "path": "#process"
+    },
+    {
+      "id": 4,
+      "name": "Insiders Wingman",
+      "path": "#wingman"
+    },
+    {
+      "id": 5,
+      "name": "Show Me What's Inside",
+      "path": "#cta"
+    }
+  ],
+  "footer1": [
+    {
+      "id": 1,
+      "title": "Services",
+      "children": [
+        {
+          "name": "MICE Events",
+          "path": "/"
+        },
+        {
+          "name": "Incentive Travel",
+          "path": "/"
+        },
+        {
+          "name": "Meetings & Conferences",
+          "path": "/"
+        },
+        {
+          "name": "Gala Dinners",
+          "path": "/"
+        },
+        {
+          "name": "Destination Management",
+          "path": "/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Company",
+      "children": [
+        {
+          "name": "Home",
+          "path": "/branding"
+        },
+        {
+          "name": "We Are Insiders",
+          "path": "/branding#team"
+        },
+        {
+          "name": "Moments We've Created",
+          "path": "/branding#work"
+        },
+        {
+          "name": "Our Edge",
+          "path": "/branding#process"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Dubai, UAE",
+      "children": [
+        {
+          "isLocation": true,
+          "name": "Dubai, United Arab Emirates",
+          "path": "https://maps.app.goo.gl/Dubai"
+        },
+        {
+          "name": "+971 XX XXX XXXX",
+          "path": "tel:+971XXXXXXXX"
+        },
+        {
+          "name": "info@insiderstourism.com",
+          "path": "mailto:info@insiderstourism.com"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Global Network",
+      "children": [
+        {
+          "isLocation": true,
+          "name": "Russia — Match Point",
+          "path": "mailto:olga@matchpoints.ru"
+        },
+        {
+          "name": "UK — Cashel Representation",
+          "path": "mailto:alia@cashelrepresentation.com"
+        },
+        {
+          "name": "Brazil — The Collection",
+          "path": "mailto:eliane@thecollectiondestinations.com"
+        },
+        {
+          "name": "USA — EDP Global",
+          "path": "mailto:wim@edpglobal.com"
+        }
+      ]
+    }
+  ],
+  "footer2": {
+    "title": "{Show Me} <br> What's Inside",
+    "subtitle": "Ready to create unforgettable experiences in the UAE? Let's make it happen.",
+    "locationData": [
+      {
+        "id": 1,
+        "city": "Dubai",
+        "address": "Dubai, United Arab Emirates"
+      }
+    ],
+    "navData": [
+      {
+        "id": 1,
+        "name": "About Us",
+        "path": "/about"
+      },
+      {
+        "id": 2,
+        "name": "Our Work",
+        "path": "/work"
+      },
+      {
+        "id": 3,
+        "name": "Contact",
+        "path": "/contact"
+      }
+    ]
+  },
+  "footer3": [
+    {
+      "id": 1,
+      "title": "Services",
+      "children": [
+        {
+          "name": "MICE Events",
+          "path": "/"
+        },
+        {
+          "name": "Incentive Travel",
+          "path": "/"
+        },
+        {
+          "name": "Meetings & Conferences",
+          "path": "/"
+        },
+        {
+          "name": "Gala Dinners",
+          "path": "/"
+        },
+        {
+          "name": "Destination Management",
+          "path": "/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Company",
+      "children": [
+        {
+          "name": "Home",
+          "path": "/"
+        },
+        {
+          "name": "About Us",
+          "path": "/about"
+        },
+        {
+          "name": "Our Work",
+          "path": "/work"
+        },
+        {
+          "name": "Contact Us",
+          "path": "/contact"
+        }
+      ]
+    }
+  ],
+  "footer4": [
+    {
+      "id": 1,
+      "name": "About Us",
+      "path": "/about"
+    },
+    {
+      "id": 2,
+      "name": "Our Work",
+      "path": "/work"
+    },
+    {
+      "id": 3,
+      "name": "Privacy",
+      "path": "/"
+    },
+    {
+      "id": 4,
+      "name": "Terms & Conditions",
+      "path": "/"
+    }
+  ]
+}

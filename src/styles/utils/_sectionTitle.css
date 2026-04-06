@@ -1,0 +1,30 @@
+.seo-section-title {
+  @apply !font-spacegrotesk !font-bold text-[30px] sm:text-[35px] md:text-[38px] lg:text-[42px] xl:text-[46px] 2xl:text-[50px] md:mt-[-11px] xl:mt-[-15px] 2xl:mt-[-17px];
+
+  span {
+    background-image: url(/assets//imgs/shape/img-s-53.png);
+
+    @apply bg-no-repeat bg-[bottom_left] bg-[length:100%_10px] md:bg-[length:100%_16px] xl:bg-[length:100%_28px];
+  }
+}
+
+.inner-section-title {
+  @apply leading-[1.08] font-beatricetrial text-[30px] sm:text-[35px] md:text-[40px] md:mt-[-11px] lg:text-[44px] lg:mt-[-12px] xl:text-[60px] xl:mt-[-17px];
+
+  &.large {
+    @apply text-[36px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[80px] 2xl:text-[100px];
+  }
+}
+
+
+.web-section-title {
+  @apply uppercase text-[35px] md:text-[40px] lg:text-[50px] xl:text-[65px] 2xl:text-[80px];
+
+  span {
+    @apply text-white-2 dark:text-[#414141];
+  }
+}
+
+.design-section-title {
+  @apply text-[30px] sm:text-[35px] md:text-[40px] lg:text-[46px] xl:text-[55px] 2xl:text-[70px] mt-[-8px] sm:mt-[-9px] md:mt-[-10px] lg:mt-[-13px] xl:mt-[-14px] 2xl:mt-[-19px];
+}

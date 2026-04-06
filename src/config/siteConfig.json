@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "meta_author": "INSIDERS Tourism",
+    "meta_image": "",
+    "meta_description": "INSIDERS Tourism - Your Destination Management Insider in the UAE. We bring your wildest imagination into reality."
+  },
+  "site_info": {
+    "title": "INSIDERS Tourism",
+    "description": "We are not your typical DMC. We are the DMI — Destination Management Insider. Take advantage of having your own insider in the Middle East.",
+    "info": "INSIDERS Tourism is a destination management company based in the UAE",
+    "base_url": "",
+    "logo": "/assets/imgs/logo/logo.png",
+    "logo_light": "/assets/imgs/logo/logo-light.png",
+    "logo_light_2": "/assets/imgs/logo/logo-light-2.png",
+    "logo_tm_light": "/assets/imgs/logo/logo-tm-light.png",
+    "logo_width": 161,
+    "logo_height": 75,
+    "logo_text": "INSIDERS"
+  },
+  "footer_info": {
+    "address": {
+      "name": "Dubai, United Arab Emirates",
+      "link": "https://maps.app.goo.gl/Dubai",
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828498761!2d54.89781049848965!3d25.076280448033498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1705913587617!5m2!1sen!2s"
+    },
+    "email": "info@insiderstourism.com",
+    "mobile": "+971 XX XXX XXXX",
+    "open_date": "Sun - Thu",
+    "open_time": "9:00 am - 6:00 pm",
+    "copyright": {
+      "enable": true,
+      "label": "© 2025 ",
+      "label_2": "All rights reserved by",
+      "company": "INSIDERS Tourism",
+      "link": "/"
+    },
+    "ctaText": "Show Me What's Inside"
+  },
+  "social": [
+    {
+      "name": "Ig",
+      "link": "https://www.instagram.com/insiderstourism",
+      "value": ""
+    },
+    {
+      "name": "Fb",
+      "link": "https://www.facebook.com/insiderstourism",
+      "value": ""
+    },
+    {
+      "name": "Li",
+      "link": "https://www.linkedin.com/company/insiderstourism",
+      "value": ""
+    }
+  ]
+}
