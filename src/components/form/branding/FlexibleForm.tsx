@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -31,8 +32,23 @@ const FlexibleForm = ({ btnText }: Props) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // console.log(values)
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+      }
+    } catch {}
+    setSubmitting(false);
   }
 
   return (
@@ -120,11 +136,15 @@ const FlexibleForm = ({ btnText }: Props) => {
             )}
           />
         </div>
-        <ButtonFlip
-          className="bg-[#E02379] text-text-fixed-2 !mt-[60px] hover:bg-[#B92786]"
-          btnText={btnText || "Submit"}
-          type="submit"
-        />
+        {submitted ? (
+          <p className="text-green-500 text-[16px] mt-[40px]">Thank you! We&apos;ll be in touch soon.</p>
+        ) : (
+          <ButtonFlip
+            className="bg-[#E02379] text-text-fixed-2 !mt-[60px] hover:bg-[#B92786]"
+            btnText={submitting ? "Sending..." : (btnText || "Submit")}
+            type="submit"
+          />
+        )}
       </form>
     </Form>
   );
