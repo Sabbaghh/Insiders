@@ -22,7 +22,7 @@ const Career = () => {
       <CareerHero {...hero} />
       <TeamCommunity {...community_area} />
       <CareerHiring title={hiring_title} jobs={jobs} />
-      <CareerProcess {...process_area} />
+      {process_area && <CareerProcess {...process_area} />}
     </main>
   );
 };

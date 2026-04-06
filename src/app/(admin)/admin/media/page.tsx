@@ -31,7 +31,7 @@ export default function MediaAdmin() {
     load();
   };
 
-  const folders = [...new Set(images.map((i) => i.folder).filter(Boolean))];
+  const folders = Array.from(new Set(images.map((i) => i.folder).filter(Boolean)));
 
   if (loading) return <p className="text-[#888]">Loading...</p>;
 
