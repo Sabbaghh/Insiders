@@ -17,7 +17,7 @@ const SectionTitle = ({
       {heading1 ? (
         <h1
           className={cn(
-            "text-[12px] sm:text-[14px] md:text-[15px] md:mt-[-4px] lg:text-[18px] lg:mt-[-5px] xl:text-[23px] xl:mt-[-7px] leading-[1.08] font-heading !font-light bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift",
+            "text-[18px] sm:text-[20px] md:text-[22px] md:mt-[-6px] lg:text-[26px] lg:mt-[-8px] xl:text-[34px] xl:mt-[-10px] leading-[1.08] font-heading !font-light bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift",
             animation,
             className
           )}
@@ -26,7 +26,7 @@ const SectionTitle = ({
       ) : (
         <h2
           className={cn(
-            "text-[12px] sm:text-[14px] md:text-[15px] md:mt-[-4px] lg:text-[18px] lg:mt-[-5px] xl:text-[23px] xl:mt-[-7px] leading-[1.08] font-heading !font-light bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift",
+            "text-[18px] sm:text-[20px] md:text-[22px] md:mt-[-6px] lg:text-[26px] lg:mt-[-8px] xl:text-[34px] xl:mt-[-10px] leading-[1.08] font-heading !font-light bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift",
             animation,
             className
           )}
