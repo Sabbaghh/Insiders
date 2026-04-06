@@ -72,7 +72,7 @@ const BrandingTestimonial = ({
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
-          <MainSectionTitle title={title} className="max-w-[480px]" />
+          <MainSectionTitle title={title} className="whitespace-nowrap" />
 
           <div className="grid gap-5 relative mt-[50px] md:grid-cols-[1fr,54%] lg:grid-cols-[1fr,65%] xl:grid-cols-[1fr,71%] xl:mt-[90px]">
             <BranTestimonialInfo {...info} />

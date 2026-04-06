@@ -90,7 +90,7 @@ const BrandingHero = ({
     .replace(/\{|\}/g, "");
 
   const titleClasses = cn(
-    "hero-title !font-getaway text-white uppercase !leading-[0.83] !font-normal text-[40px] mt-0 mb-0 sm:text-[40px] sm:mt-[-1px] sm:mb-[-7px] md:text-[65px] md:mt-[-1px] md:mb-[-5px] md:tracking-[-0.04em] xl:text-[85px] xl:mb-[-7px] 2xl:text-[150px] 2xl:mt-[-1px] 2xl:mb-[-12px]",
+    "hero-title text-white uppercase !leading-[1.4] !font-normal text-[32px] mt-0 mb-0 sm:text-[32px] md:text-[50px] xl:text-[68px] 2xl:text-[100px]",
     layout === "box" &&
       "xxl:text-[105px] 2xl:mt-0 2xl:mb-[-7px] 2xl:max-w-[900px]"
   );
@@ -119,7 +119,7 @@ const BrandingHero = ({
       <div className="absolute w-full h-full -z-[5] top-0 start-0 bg-black/60" />
 
       <div className="container flex items-center justify-center min-h-screen">
-        <div className="w-full lg:w-[70%] relative">
+        <div className="w-full lg:w-[70%] relative mx-auto lg:ml-[20%]">
           {/* Logo Icon — parallax */}
           <div
             ref={iconRef}
@@ -136,10 +136,11 @@ const BrandingHero = ({
           </div>
           <div
             ref={containerRef}
-            className="pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] 2xl:pb-[60px]"
+            className="pb-[10px] md:pb-[12px] lg:pb-[14px] xl:pb-[16px] 2xl:pb-[20px]"
           >
             <h1
-              className={titleClasses}
+              className={`${titleClasses} font-boldonse`}
+              style={{ fontFamily: "'Boldonse', sans-serif" }}
               dangerouslySetInnerHTML={{ __html: titleHtml }}
             />
           </div>

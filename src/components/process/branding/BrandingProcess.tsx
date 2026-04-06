@@ -209,7 +209,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 width={300}
                                 height={300}
                                 alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.12] rotate-[-8deg]"
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.35] rotate-[-8deg]"
                               />
                             </div>
                             <div className="relative z-[1]">
@@ -225,7 +225,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 </p>
                               )}
                               {item.description && (
-                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
+                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6] max-w-[320px] ml-auto">
                                   {item.description}
                                 </p>
                               )}
@@ -244,7 +244,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 width={300}
                                 height={300}
                                 alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.12] rotate-[8deg]"
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.35] rotate-[8deg]"
                               />
                             </div>
                             <div className="relative z-[1]">
@@ -260,7 +260,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 </p>
                               )}
                               {item.description && (
-                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
+                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6] max-w-[320px]">
                                   {item.description}
                                 </p>
                               )}
@@ -279,7 +279,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                           width={200}
                           height={200}
                           alt={item.title}
-                          className="w-[100px] h-[100px] object-contain rounded-full opacity-[0.1] rotate-[-6deg]"
+                          className="w-[100px] h-[100px] object-contain rounded-full opacity-[0.3] rotate-[-6deg]"
                         />
                       </div>
                       <div className="relative z-[1]">

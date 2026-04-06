@@ -35,11 +35,13 @@ const Cta1 = ({ title, sub_title }: Props) => {
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
           <div className="text-center">
-            <span className="has_fade_anim text-[20px] lg:text-[24px] xl:text-[26px] 2xl:text-[30px] uppercase !font-getaway !leading-none font-normal">
+            <span className="hero-title has_fade_anim text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] uppercase !leading-none font-normal text-text-3" style={{ fontFamily: "'Boldonse', sans-serif" }}>
               {sub_title}
             </span>
             <div className="mt-5 xl:mt-[30px]">
-              <h2 className="has_fade_anim text-[60px] sm:text-[70px] lg:text-[100px] xl:text-[120px] 2xl:text-[150px] !font-normal !font-getaway uppercase max-w-[900px] mx-auto bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
+              <h2
+                className="hero-title has_fade_anim text-[30px] sm:text-[35px] lg:text-[50px] xl:text-[60px] 2xl:text-[75px] !font-normal uppercase max-w-[900px] mx-auto bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift !leading-[1.5]"
+                style={{ fontFamily: "'Boldonse', sans-serif" }}>
                 {title}
               </h2>
             </div>

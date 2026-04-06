@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { TTeamMemberType } from "@/types";
-import { FaLinkedinIn, FaPhone, FaEnvelope } from "react-icons/fa6";
+import { FaLinkedinIn, FaPhone, FaEnvelope, FaCircleInfo } from "react-icons/fa6";
 
 const BranProfileCard = ({ data }: TTeamMemberType) => {
   const { name, post, avatar, nickname, social_link, description } = data;
@@ -52,12 +52,39 @@ const BranProfileCard = ({ data }: TTeamMemberType) => {
           <p className="text-[14px] mt-[8px] leading-none bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
             {post}
           </p>
-          <button
-            onClick={(e) => { e.stopPropagation(); setShowBio(true); }}
-            className="mt-[12px] text-[11px] uppercase tracking-[0.1em] px-[16px] py-[7px] rounded-full border border-[#DEDEDE] dark:border-[#434343] text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
-          >
-            View
-          </button>
+          <div className="flex items-center justify-center gap-[8px] mt-[12px]">
+            {social_link && (
+              <a
+                href={social_link === "#" ? "#" : social_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaLinkedinIn className="text-[11px]" />
+              </a>
+            )}
+            <a
+              href="mailto:info@insiderstourism.com"
+              onClick={(e) => e.stopPropagation()}
+              className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+            >
+              <FaEnvelope className="text-[11px]" />
+            </a>
+            <a
+              href="tel:+971000000000"
+              onClick={(e) => e.stopPropagation()}
+              className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+            >
+              <FaPhone className="text-[9px]" />
+            </a>
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowBio(true); }}
+              className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+            >
+              <FaCircleInfo className="text-[13px]" />
+            </button>
+          </div>
         </div>
       </div>
 

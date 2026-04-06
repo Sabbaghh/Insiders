@@ -130,7 +130,7 @@
 
 .instrument {
 
-  h1,
+  h1:not(.hero-title),
   h2,
   h3,
   h4,

@@ -66,6 +66,7 @@ const config: Config = {
       fontFamily: {
         primary: ["beatricetrial", "sans-serif"],
         heading: ["beatricetrial", "sans-serif"],
+        boldonse: ["Boldonse", "sans-serif"],
         getaway: ["getaway", "sans-serif"],
         instrument: ["Instrument Sans", "sans-serif"],
         beatricetrial: ["beatricetrial", "sans-serif"],

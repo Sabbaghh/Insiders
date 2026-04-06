@@ -33,22 +33,21 @@ const BranAboutArea = ({ aboutData }: Props) => {
       <div>
         <div>
           <p
-            className="leading-none text-[10px] mt-0 md:text-[14px] lg:text-[16px] xl:text-[20px] xl:mt-[-8px]
+            className="!leading-[1.3] text-[10px] mt-0 md:text-[14px] lg:text-[16px] xl:text-[20px] xl:mt-[-8px]
               2xl:text-[26px] 2xl:-mt-3 text-white/50 !font-extralight has_text_mov_anim"
-          >
-            {description}
-          </p>
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
           {/* Quick Links */}
-          <div className="mt-8 xl:mt-[40px] has_fade_anim flex items-center gap-[8px] md:gap-0 flex-wrap" data-fade-from="left">
+          <div className="mt-4 xl:mt-[16px] has_fade_anim flex items-center gap-0 flex-wrap" data-fade-from="left">
             {[
-              { label: "Clients", target: "clients" },
-              { label: "Our Work", target: "work" },
-              { label: "About Us", target: "team" },
-              { label: "Our Edge", target: "process" },
-              { label: "Partners", target: "wingman" },
+              { label: "We Are\nInsiders", target: "team" },
+              { label: "Moments We've\nCreated", target: "work" },
+              { label: "Our\nEdge", target: "process" },
+              { label: "Our Global\nNetwork", target: "wingman" },
+              { label: "Show Me\nWhat's Inside", target: "cta" },
             ].map((link, i) => (
               <span key={link.target} className="flex items-center">
-                {i > 0 && <span className="text-white/30 hidden md:inline mx-[16px]">|</span>}
+                {i > 0 && <span className="text-white/30 mx-[12px] md:mx-[16px]">|</span>}
                 <button
                   onClick={() => {
                     const el = document.getElementById(link.target);
@@ -58,7 +57,7 @@ const BranAboutArea = ({ aboutData }: Props) => {
                       document.documentElement.scrollTop = y;
                     }
                   }}
-                  className="text-white/60 text-[11px] md:text-[14px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 border border-white/20 md:border-0 rounded-full px-[14px] py-[6px] md:px-0 md:py-0"
+                  className="text-white/60 text-[10px] md:text-[11px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 leading-[1.4] whitespace-pre-line text-center"
                 >
                   {link.label}
                 </button>
@@ -68,7 +67,7 @@ const BranAboutArea = ({ aboutData }: Props) => {
 
           {aboutData.action_btn?.enable && (
             <div
-              className="mt-6 xl:mt-[30px] has_fade_anim"
+              className="mt-3 xl:mt-[14px] has_fade_anim"
               data-fade-from="left"
             >
               <button
