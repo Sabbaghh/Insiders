@@ -6,7 +6,6 @@ import hasPinContent from "@/lib/animation/hasPinContent";
 import { TWorkType } from "@/types";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
-import Link from "next/link";
 import CarouselCard from "@/components/portfolio/carousel/CarouselCard";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { CarouselSkeletonCard } from "@/components/portfolio/carousel/CarouselSkeletonCard";
@@ -106,9 +105,7 @@ const BrandingWorkCarousel = ({ works, title }: Props) => {
                   key={index}
                   className="swiper-slide !h-[310px] sm:!h-[360px] !w-[600px] xl:!h-[450px] xl:!w-[700px] 2xl:!h-[550px] 2xl:!w-[800px] !max-w-[calc(100%-48px)]"
                 >
-                  <Link href={`/work/branding/${item.slug}`}>
-                    <CarouselCard image={item.image} title={item.title} tag={item.tag} />
-                  </Link>
+                  <CarouselCard image={item.image} title={item.title} tag={item.tag} />
                 </SwiperSlide>
               ))}
             </Swiper>
