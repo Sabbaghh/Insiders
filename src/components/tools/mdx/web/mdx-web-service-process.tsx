@@ -31,16 +31,18 @@ const WebServiceProcess = ({
           {serial_no}
         </span>
       </div>
-      <div className="mt-[20px] xl:mt-[40px]">
-        <ImageComponent
-          src={icon.light}
-          darkSrc={icon.dark}
-          width={52}
-          height={60}
-          alt="icon"
-          className="w-auto"
-        />
-      </div>
+      {icon && (
+        <div className="mt-[20px] xl:mt-[40px]">
+          <ImageComponent
+            src={icon.light}
+            darkSrc={icon.dark}
+            width={52}
+            height={60}
+            alt="icon"
+            className="w-auto"
+          />
+        </div>
+      )}
       <div className="mt-[30px]">
         <ul>
           {feature_list.map((item, i) => (
