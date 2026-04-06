@@ -38,7 +38,7 @@ const BrandingFunFact = ({ title }: Props) => {
     <section
       id="trust"
       ref={pinElement}
-      className="main-section-style bg-[#F8F2EB] dark:bg-[#252525]"
+      className="main-section-style bg-[#FAF7F8] dark:bg-[#252525]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
@@ -51,7 +51,7 @@ const BrandingFunFact = ({ title }: Props) => {
                   className="has_fade_anim text-center"
                   data-delay={0.15 * (i + 1)}
                 >
-                  <h3 className="text-[40px] md:text-[50px] xl:text-[60px] 2xl:text-[80px] font-semibold leading-none">
+                  <h3 className="text-[28px] md:text-[34px] xl:text-[42px] 2xl:text-[52px] !font-light leading-none">
                     <span
                       data-count={stat.value}
                       className="has_count_anim"

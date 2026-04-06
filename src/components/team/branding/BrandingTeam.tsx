@@ -38,7 +38,7 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
     <section
       id="team"
       ref={pinElement}
-      className="team_area main-section-style bg-[#F8F2EB] dark:bg-[#252525]"
+      className="team_area main-section-style bg-[#FAF7F8] dark:bg-[#252525]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
@@ -47,17 +47,21 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
             <MainSectionTitle title={title} />
             {/* Corner quote */}
             <div className="has_fade_anim hidden lg:block absolute top-0 end-0 max-w-[280px] text-end">
-              <div className="border-e-[2px] border-[#1C1C1C] dark:border-white pe-[20px]">
+              <div className="flex gap-[20px] justify-end">
                 <p className="text-[15px] leading-[1.5] text-text-3 italic">
                   &ldquo;{text}&rdquo;
                 </p>
+                <div className="w-[2px] flex-shrink-0 bg-gradient-to-b from-[#95298C] via-[#E02379] to-[#95298C] bg-[length:100%_200%] animate-gradient-shift" />
               </div>
             </div>
             {/* Mobile: show below title */}
             <div className="has_fade_anim lg:hidden mt-[20px]">
-              <p className="text-[15px] leading-[1.5] text-text-3 italic border-s-[2px] border-[#1C1C1C] dark:border-white ps-[16px]">
-                &ldquo;{text}&rdquo;
-              </p>
+              <div className="flex gap-[16px]">
+                <div className="w-[2px] flex-shrink-0 bg-gradient-to-b from-[#95298C] via-[#E02379] to-[#95298C] bg-[length:100%_200%] animate-gradient-shift" />
+                <p className="text-[15px] leading-[1.5] text-text-3 italic">
+                  &ldquo;{text}&rdquo;
+                </p>
+              </div>
             </div>
           </div>
 
@@ -93,15 +97,14 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
                   <span className="has_fade_anim text-[14px] uppercase tracking-[0.2em] text-text-3 inline-block mb-[10px]">
                     The Mastermind
                   </span>
-                  <h3 className="has_fade_anim text-[36px] sm:text-[40px] md:text-[50px] xl:text-[70px] 2xl:text-[80px] leading-[1.08]">
+                  <h3 className="has_fade_anim text-[24px] sm:text-[28px] md:text-[32px] xl:text-[40px] 2xl:text-[48px] leading-[1.08] whitespace-nowrap">
                     {gm.data.name.split(" ").map((word, index) => (
                       <span key={`gm-name-${index}`}>
-                        {word}
-                        {index === 0 && <br />}
+                        {word}{index === 0 && " "}
                       </span>
                     ))}
                   </h3>
-                  <span className="has_fade_anim text-[20px] inline-block text-text-3 mt-[12px]">
+                  <span className="has_fade_anim text-[20px] inline-block mt-[12px] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
                     {gm.data.post}
                   </span>
                   <div className="has_fade_anim mt-[30px] space-y-[16px] text-[16px] xl:text-[17px] leading-[1.6] text-text-3">
@@ -136,9 +139,13 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
                       ].map((item, i) => (
                         <span
                           key={i}
-                          className="text-[13px] py-[8px] px-[16px] border border-[#DEDEDE] dark:border-[#434343] rounded-[30px] inline-block text-text-3 uppercase"
+                          className="inline-block rounded-[30px] p-[1px] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-[length:200%_100%] animate-gradient-shift"
                         >
-                          {item}
+                          <span className="block text-[13px] py-[8px] px-[16px] rounded-[30px] bg-[#FAF7F8] dark:bg-[#252525] uppercase">
+                            <span className="bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
+                              {item}
+                            </span>
+                          </span>
                         </span>
                       ))}
                     </div>

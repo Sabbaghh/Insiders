@@ -65,7 +65,7 @@ const config: Config = {
       },
       fontFamily: {
         primary: ["beatricetrial", "sans-serif"],
-        heading: ["Instrument Sans", "sans-serif"],
+        heading: ["beatricetrial", "sans-serif"],
         getaway: ["getaway", "sans-serif"],
         instrument: ["Instrument Sans", "sans-serif"],
         beatricetrial: ["beatricetrial", "sans-serif"],
@@ -80,6 +80,11 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -98,6 +103,7 @@ const config: Config = {
         },
       },
       animation: {
+        "gradient-shift": "gradient-shift 4s ease infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

@@ -20,7 +20,7 @@ const BranProcessCard = ({ serial_no, icon, title, subtitle, description }: Proc
       <span className=" text-[16px] text-[#6D6E71] dark:text-text-fixed-3 inline-block ml-[30px]">{`Step - ${formatSerialNo(
         serial_no
       )}`}</span>
-      <div className="h-[90px] w-[90px] rounded-full bg-background-2 flex justify-center items-center mx-auto transform translate-y-1/2 outline outline-[15px] outline-[#F8F2EB] dark:outline-[#252525] mt-[44px] xl:mt-[84px] 2xl:mt-[124px]">
+      <div className="h-[90px] w-[90px] rounded-full bg-background-2 flex justify-center items-center mx-auto transform translate-y-1/2 outline outline-[15px] outline-[#FAF7F8] dark:outline-[#252525] mt-[44px] xl:mt-[84px] 2xl:mt-[124px]">
         <ImageComponent
           src={icon.light}
           darkSrc={icon.dark}

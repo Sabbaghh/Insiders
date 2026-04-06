@@ -32,7 +32,7 @@ const BrandingClients = ({ brands }: Props) => {
     <section
       id="clients"
       ref={pinElement}
-      className="main-section-style bg-[#F8F2EB] dark:bg-[#252525]"
+      className="main-section-style bg-[#FAF7F8] dark:bg-[#252525]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">

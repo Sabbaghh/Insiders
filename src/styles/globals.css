@@ -14,8 +14,8 @@
     --background: #FFFFFF;
     --background2: #1a1a1a;
     --background3: #1a1a1a;
-    --background4: #F8F2EB;
-    --background5: #F8F2EB;
+    --background4: #FAF7F8;
+    --background5: #FAF7F8;
 
 
     --text-fixed: #1a1a1a;
@@ -31,7 +31,7 @@
 
     --border: #1a1a1a2B;
     --border2: #1a1a1a14;
-    --border3: #F8F2EB;
+    --border3: #FAF7F8;
 
     .root-layout[theme-setting="style-2"] {
       --primary: #B92786;
@@ -136,7 +136,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-semibold tracking-tight uppercase
+    @apply font-heading font-light tracking-tight uppercase
   }
 
   p {

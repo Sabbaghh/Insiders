@@ -58,7 +58,7 @@ const BrandingWorkCarousel = ({ works, title }: Props) => {
         <div className="main-section-spacing">
           <SectionTitle
             title={title}
-            className="max-w-[300px] text-[28px] mt-[-5px] sm:text-[30px] sm:-mt-2 md:text-[36px] md:mt-[-10px] lg:text-[40px] lg:-mt-3 xl:text-[60px] xl:-mt-5 2xl:text-[70px] 2xl:-mt-6 font-instrument font-semibold leading-[1]"
+            className="whitespace-nowrap leading-[1]"
           />
         </div>
       </div>

@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
   title: string;
+  subtitle?: string;
   shape: {
     light: string;
     dark: string;
@@ -28,7 +29,7 @@ type Props = {
 const formatSerialNo = (serial: number) =>
   serial < 10 ? `0${serial}` : `${serial}`;
 
-const BrandingProcess = ({ title, process_list }: Props) => {
+const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const pinElement = useRef<HTMLDivElement>(null!);
   const timelineRef = useRef<HTMLDivElement>(null!);
@@ -81,6 +82,50 @@ const BrandingProcess = ({ title, process_list }: Props) => {
           },
         });
       });
+
+      // Animate stamp containers — fade in on scroll
+      const stamps = gsap.utils.toArray<HTMLElement>(".process-stamp-wrap");
+      stamps.forEach((stamp) => {
+        gsap.fromTo(
+          stamp,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: stamp,
+              start: "top 70%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+      // Animate step titles — reveal gradient on scroll
+      const stepTitles = gsap.utils.toArray<HTMLElement>(".process-step-title");
+      stepTitles.forEach((title) => {
+        gsap.fromTo(
+          title,
+          {
+            backgroundSize: "0% 100%",
+            color: "#6D6E71",
+            webkitTextFillColor: "#6D6E71",
+          },
+          {
+            backgroundSize: "200% 100%",
+            color: "transparent",
+            webkitTextFillColor: "transparent",
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: title,
+              start: "top 70%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
     },
     { scope: containerRef }
   );
@@ -93,12 +138,17 @@ const BrandingProcess = ({ title, process_list }: Props) => {
     <section
       id="process"
       ref={pinElement}
-      className="bg-[#F8F2EB] dark:bg-[#252525] main-section-style pb-[250px]"
+      className="bg-[#FAF7F8] dark:bg-[#252525] main-section-style pb-[250px]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
           <div className="text-center">
             <MainSectionTitle title={title} className="max-w-[700px] mx-auto" />
+            {subtitle && (
+              <p className="has_fade_anim text-[14px] md:text-[16px] xl:text-[18px] text-text-3 mt-[12px] mx-auto max-w-[500px]">
+                {subtitle}
+              </p>
+            )}
           </div>
 
           <div
@@ -137,99 +187,119 @@ const BrandingProcess = ({ title, process_list }: Props) => {
                     data-fade-from={isLeft ? "left" : "right"}
                     data-delay="0.15"
                   >
-                    {/* Image on the dot — desktop */}
-                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
-                      <div className="process-dot w-[70px] h-[70px] rounded-full overflow-hidden border-[4px] border-[#DEDEDE] dark:border-[#404040] shadow-md transition-all duration-300">
-                        <Image
-                          src={item.image}
-                          width={70}
-                          height={70}
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    {/* Dot — desktop */}
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[6px] z-10">
+                      <div className="process-dot w-[14px] h-[14px] rounded-full bg-[#DEDEDE] dark:bg-[#404040] border-[3px] border-[#FAF7F8] dark:border-[#252525] transition-all duration-300" />
                     </div>
 
-                    {/* Image on the dot — mobile */}
-                    <div className="md:hidden absolute left-[20px] -translate-x-1/2 top-0 z-10">
-                      <div className="process-dot w-[40px] h-[40px] rounded-full overflow-hidden border-[3px] border-[#DEDEDE] dark:border-[#404040] shadow-sm transition-all duration-300">
-                        <Image
-                          src={item.image}
-                          width={40}
-                          height={40}
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    {/* Dot — mobile */}
+                    <div className="md:hidden absolute left-[20px] -translate-x-1/2 top-[6px] z-10">
+                      <div className="process-dot w-[12px] h-[12px] rounded-full bg-[#DEDEDE] dark:bg-[#404040] border-[2px] border-[#FAF7F8] dark:border-[#252525] transition-all duration-300" />
                     </div>
 
                     {/* Desktop layout */}
                     <div className="hidden md:grid md:grid-cols-2">
                       {isLeft ? (
                         <>
-                          <div className="text-end pr-[60px] xl:pr-[80px]">
-                            <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
-                              Step {formatSerialNo(item.serial_no)}
-                            </span>
-                            <h3 className="text-[22px] xl:text-[28px] leading-[1.15] font-semibold mt-[8px]">
-                              {item.title}
-                            </h3>
-                            {item.subtitle && (
-                              <p className="mt-[10px] text-[15px] italic text-text-3 leading-[1.5]">
-                                {item.subtitle}
-                              </p>
-                            )}
-                            {item.description && (
-                              <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
-                                {item.description}
-                              </p>
-                            )}
+                          <div className="relative text-end pr-[60px] xl:pr-[80px]">
+                            {/* Stamp image — behind text, aligned left */}
+                            <div className="process-stamp-wrap absolute top-[20%] left-[60px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
+                              <Image
+                                src={item.image}
+                                width={300}
+                                height={300}
+                                alt={item.title}
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.12] rotate-[-8deg]"
+                              />
+                            </div>
+                            <div className="relative z-[1]">
+                              <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
+                                Step {formatSerialNo(item.serial_no)}
+                              </span>
+                              <h3 className="process-step-title text-[22px] xl:text-[28px] leading-[1.15] font-semibold mt-[8px] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-[#6D6E71]">
+                                {item.title}
+                              </h3>
+                              {item.subtitle && (
+                                <p className="mt-[10px] text-[15px] italic text-text-3 leading-[1.5]">
+                                  {item.subtitle}
+                                </p>
+                              )}
+                              {item.description && (
+                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
+                                  {item.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
                           <div />
                         </>
                       ) : (
                         <>
                           <div />
-                          <div className="pl-[60px] xl:pl-[80px]">
-                            <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
-                              Step {formatSerialNo(item.serial_no)}
-                            </span>
-                            <h3 className="text-[22px] xl:text-[28px] leading-[1.15] font-semibold mt-[8px]">
-                              {item.title}
-                            </h3>
-                            {item.subtitle && (
-                              <p className="mt-[10px] text-[15px] italic text-text-3 leading-[1.5]">
-                                {item.subtitle}
-                              </p>
-                            )}
-                            {item.description && (
-                              <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
-                                {item.description}
-                              </p>
-                            )}
+                          <div className="relative pl-[60px] xl:pl-[80px]">
+                            {/* Stamp image — behind text, aligned right */}
+                            <div className="process-stamp-wrap absolute top-[20%] right-[60px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
+                              <Image
+                                src={item.image}
+                                width={300}
+                                height={300}
+                                alt={item.title}
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.12] rotate-[8deg]"
+                              />
+                            </div>
+                            <div className="relative z-[1]">
+                              <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
+                                Step {formatSerialNo(item.serial_no)}
+                              </span>
+                              <h3 className="process-step-title text-[22px] xl:text-[28px] leading-[1.15] font-semibold mt-[8px] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-[#6D6E71]">
+                                {item.title}
+                              </h3>
+                              {item.subtitle && (
+                                <p className="mt-[10px] text-[15px] italic text-text-3 leading-[1.5]">
+                                  {item.subtitle}
+                                </p>
+                              )}
+                              {item.description && (
+                                <p className="mt-[8px] text-[14px] text-text-3 leading-[1.6]">
+                                  {item.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
                         </>
                       )}
                     </div>
 
                     {/* Mobile layout */}
-                    <div className="md:hidden pl-[50px]">
-                      <span className="text-[12px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
-                        Step {formatSerialNo(item.serial_no)}
-                      </span>
-                      <h3 className="text-[18px] leading-[1.2] font-semibold mt-[6px]">
-                        {item.title}
-                      </h3>
-                      {item.subtitle && (
-                        <p className="mt-[8px] text-[13px] italic text-text-3 leading-[1.5]">
-                          {item.subtitle}
-                        </p>
-                      )}
-                      {item.description && (
-                        <p className="mt-[6px] text-[12px] text-text-3 leading-[1.6]">
-                          {item.description}
-                        </p>
-                      )}
+                    <div className="md:hidden pl-[50px] relative">
+                      {/* Stamp image — behind text */}
+                      <div className="process-stamp-wrap absolute top-1/2 right-[10px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
+                        <Image
+                          src={item.image}
+                          width={200}
+                          height={200}
+                          alt={item.title}
+                          className="w-[100px] h-[100px] object-contain rounded-full opacity-[0.1] rotate-[-6deg]"
+                        />
+                      </div>
+                      <div className="relative z-[1]">
+                        <span className="text-[12px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
+                          Step {formatSerialNo(item.serial_no)}
+                        </span>
+                        <h3 className="process-step-title text-[18px] leading-[1.2] font-semibold mt-[6px] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-[#6D6E71]">
+                          {item.title}
+                        </h3>
+                        {item.subtitle && (
+                          <p className="mt-[8px] text-[13px] italic text-text-3 leading-[1.5]">
+                            {item.subtitle}
+                          </p>
+                        )}
+                        {item.description && (
+                          <p className="mt-[6px] text-[12px] text-text-3 leading-[1.6]">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );

@@ -30,7 +30,7 @@ const Cta1 = ({ title, sub_title }: Props) => {
     <section
       id="cta"
       ref={pinElement}
-      className="cta_area main-section-style bg-[#F8F2EB] dark:bg-[#252525]"
+      className="cta_area main-section-style bg-[#FAF7F8] dark:bg-[#252525]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
@@ -39,7 +39,7 @@ const Cta1 = ({ title, sub_title }: Props) => {
               {sub_title}
             </span>
             <div className="mt-5 xl:mt-[30px]">
-              <h2 className="has_fade_anim text-[60px] sm:text-[70px] lg:text-[100px] xl:text-[120px] 2xl:text-[150px] !font-normal !font-getaway uppercase max-w-[900px] mx-auto">
+              <h2 className="has_fade_anim text-[60px] sm:text-[70px] lg:text-[100px] xl:text-[120px] 2xl:text-[150px] !font-normal !font-getaway uppercase max-w-[900px] mx-auto bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
                 {title}
               </h2>
             </div>

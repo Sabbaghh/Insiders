@@ -117,6 +117,7 @@ const BrandingHero = ({
       </div>
       {/* Dark Overlay */}
       <div className="absolute w-full h-full -z-[5] top-0 start-0 bg-black/60" />
+
       <div className="container flex items-center justify-center min-h-screen">
         <div className="w-full lg:w-[70%] relative">
           {/* Logo Icon — parallax */}

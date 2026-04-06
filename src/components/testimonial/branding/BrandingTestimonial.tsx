@@ -68,7 +68,7 @@ const BrandingTestimonial = ({
     <div
       id="testimonials"
       ref={pinElement}
-      className="bg-[#F8F2EB] dark:bg-[#1a1a1a] main-section-style"
+      className="bg-[#FAF7F8] dark:bg-[#1a1a1a] main-section-style"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
