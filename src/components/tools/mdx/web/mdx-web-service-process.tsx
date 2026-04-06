@@ -43,18 +43,20 @@ const WebServiceProcess = ({
           />
         </div>
       )}
-      <div className="mt-[30px]">
-        <ul>
-          {feature_list.map((item, i) => (
-            <li
-              key={i}
-              className="flex gap-[10px] text-[18px] first:mt-0 mt-[10px]"
-            >
-              <span>+</span> {item}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {feature_list && (
+        <div className="mt-[30px]">
+          <ul>
+            {feature_list.map((item, i) => (
+              <li
+                key={i}
+                className="flex gap-[10px] text-[18px] first:mt-0 mt-[10px]"
+              >
+                <span>+</span> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
