@@ -29,8 +29,8 @@ const BrandingHeader = ({ maxWidth, onlyDark = false, customLogo }: Props) => {
           <Logo
             light={!onlyDark && isLight}
             url={customLogo}
-            customWidth={customLogo ? 160 : undefined}
-            customHeight={customLogo ? 75 : undefined}
+            customWidth={customLogo ? 155 : undefined}
+            customHeight={customLogo ? 72 : undefined}
           />
         </div>
       </div>

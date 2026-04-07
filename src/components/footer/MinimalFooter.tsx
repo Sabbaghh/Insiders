@@ -4,7 +4,8 @@ import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react
 
 const MinimalFooter = () => {
   const { site_info, footer_info } = siteConfig;
-  const { label, company } = footer_info?.copyright || {};
+  const { company } = footer_info?.copyright || {};
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="main-section-style !pb-0 bg-background-fixed">
@@ -116,7 +117,7 @@ const MinimalFooter = () => {
         <div className="container">
           <div className="py-[22px] xl:py-8">
             <p className="text-center text-[14px] font-medium text-text-fixed-3">
-              {label}
+              © {currentYear}{" "}
               <span className="text-text-fixed-2">{company}</span>
             </p>
           </div>
