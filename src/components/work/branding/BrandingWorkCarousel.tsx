@@ -57,10 +57,18 @@ const BrandingWorkCarousel = ({ works, title }: Props) => {
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
-          <SectionTitle
-            title={title}
-            className="whitespace-nowrap leading-[1]"
-          />
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[20px]">
+            <SectionTitle
+              title={title}
+              className="whitespace-nowrap leading-[1]"
+            />
+            <Link
+              href="/projects"
+              className="inline-block text-[12px] md:text-[13px] uppercase tracking-[0.15em] border border-[#DEDEDE] dark:border-[#434343] rounded-full px-[24px] py-[12px] text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors self-start md:self-auto"
+            >
+              View All →
+            </Link>
+          </div>
         </div>
       </div>
       <div className="container !max-w-[1850px]">

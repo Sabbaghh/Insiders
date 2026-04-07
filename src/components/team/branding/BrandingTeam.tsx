@@ -124,18 +124,25 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
                       More than a DMC, it&apos;s a company built on genuine care
                       and a very hands-on approach. Every programme is created
                       from scratch, responses are fast and personal, and
-                      everything is taken care of by our own team on the ground
-                      — from our fleet to our guides — so every experience feels
-                      seamless and truly ours.
+                      everything is taken care of by our own team on the ground,
+                      from our fleet to our guides, so every experience feels
+                      seamless and truly ours. From arrival to farewell, we stay
+                      fully involved in every detail.
+                    </p>
+                    <p>
+                      The dream hotel remains Ahmed&apos;s goal, but his vision
+                      has grown. He&apos;s now building a network of 8–10
+                      INSIDERS destinations worldwide, the journey is already
+                      well underway.
                     </p>
                   </div>
                   <div className="mt-[30px] has_fade_anim">
                     <div className="flex flex-wrap gap-[10px]">
                       {[
-                        "Own fleet & certified guides — no middlemen",
-                        "All 7 Emirates + Oman, Jordan & Bahrain",
-                        "4 global markets: LATAM, Russia, UK & USA",
-                        "Available 24/7",
+                        "Own fleet & certified local guides — no middlemen",
+                        "All 7 Emirates, plus Oman, Jordan & Bahrain",
+                        "4 global markets: Latin America, Russia, UK & USA",
+                        "Available 24/7 — from first enquiry to final goodbye",
                       ].map((item, i) => (
                         <span
                           key={i}
@@ -160,8 +167,8 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
             <span className="has_fade_anim text-[14px] uppercase tracking-[0.2em] text-text-3 inline-block mb-[20px]">
               The Team
             </span>
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-x-[30px] gap-y-[40px]">
-              {restOfTeam?.slice(0, 6)?.map((profile) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-[30px] gap-y-[40px]">
+              {restOfTeam?.slice(0, 8)?.map((profile) => (
                 <BranProfileCard key={profile.data.id} {...profile} />
               ))}
             </div>

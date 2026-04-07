@@ -28,7 +28,7 @@ const ProjectPage = ({ params }: Props) => {
   const work = works.find((w) => w.slug === params.title);
   if (!work?.data) notFound();
 
-  const { title, image, gallery, date, client, venue, meta }: any = work.data;
+  const { title, image, gallery, date, client, venue, pax, meta }: any = work.data;
   const galleryImages: string[] = gallery || [];
 
   return (
@@ -78,6 +78,12 @@ const ProjectPage = ({ params }: Props) => {
                       <>
                         <span className="text-white/30">|</span>
                         <span>{date}</span>
+                      </>
+                    )}
+                    {pax && (
+                      <>
+                        <span className="text-white/30">|</span>
+                        <span>{pax} Pax</span>
                       </>
                     )}
                     {venue && (
