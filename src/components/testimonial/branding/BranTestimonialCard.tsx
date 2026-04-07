@@ -24,9 +24,9 @@ const BranTestimonialCard = ({ icon, text, author }: testimonialProps) => {
           <div>
             <Image src={icon} width={52} height={37} alt="icon" />
           </div>
-          <div className="mt-10 md:mt-[92px]">
+          <div className="mt-4 md:mt-6">
             <p
-              className="leading-[1.25] text-[20px] lg:text-[24px] 2xl:text-[30px] font-instrument font-semibold text-[#888888] [&_span]:text-text"
+              className="leading-[1.4] text-[14px] lg:text-[16px] 2xl:text-[20px] font-instrument font-medium text-[#888888] [&_span]:text-text"
               dangerouslySetInnerHTML={convertWithBrSpan(text)}
             />
           </div>

@@ -89,7 +89,7 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
                     width={400}
                     height={480}
                     alt={gm.data.name}
-                    className="object-cover w-full h-full rounded-[10px]"
+                    className="object-cover w-full h-full rounded-[16px]"
                   />
                 </div>
                 {/* Content */}
@@ -164,7 +164,7 @@ const BrandingTeam = ({ title, text, teamMembers }: teamProps) => {
 
           {/* Rest of the Team */}
           <div className="mt-[60px] xl:mt-[100px]">
-            <span className="has_fade_anim text-[14px] uppercase tracking-[0.2em] text-text-3 inline-block mb-[20px]">
+            <span className="has_fade_anim text-[18px] md:text-[20px] uppercase tracking-[0.2em] text-text-3 inline-block mb-[20px]">
               The Team
             </span>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-[30px] gap-y-[40px]">

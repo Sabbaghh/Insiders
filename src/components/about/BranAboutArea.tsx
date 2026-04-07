@@ -38,7 +38,7 @@ const BranAboutArea = ({ aboutData }: Props) => {
             dangerouslySetInnerHTML={{ __html: description }}
           />
           {/* Quick Links */}
-          <div className="mt-4 xl:mt-[16px] has_fade_anim flex items-center gap-0 flex-wrap" data-fade-from="left">
+          <div className="mt-10 xl:mt-[40px] has_fade_anim flex items-center gap-0 flex-wrap" data-fade-from="left">
             {[
               { label: "We Are\nInsiders", target: "team" },
               { label: "Moments We've\nCreated", target: "work" },
@@ -47,7 +47,7 @@ const BranAboutArea = ({ aboutData }: Props) => {
               { label: "Show Me\nWhat's Inside", target: "cta" },
             ].map((link, i) => (
               <span key={link.target} className="flex items-center">
-                {i > 0 && <span className="text-white/30 mx-[12px] md:mx-[16px]">|</span>}
+                {i > 0 && <span className="text-white/30 mx-[20px] md:mx-[28px]">|</span>}
                 <button
                   onClick={() => {
                     const el = document.getElementById(link.target);
@@ -57,7 +57,7 @@ const BranAboutArea = ({ aboutData }: Props) => {
                       document.documentElement.scrollTop = y;
                     }
                   }}
-                  className="text-white/60 text-[10px] md:text-[11px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 leading-[1.4] whitespace-pre-line text-center"
+                  className="text-white/60 text-[12px] md:text-[13px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 leading-[1.4] whitespace-pre-line text-center min-w-[80px] md:min-w-[90px]"
                 >
                   {link.label}
                 </button>

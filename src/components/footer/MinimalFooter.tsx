@@ -1,9 +1,9 @@
 import Logo from "@/components/elements/logo/Logo";
 import siteConfig from "@/config/siteConfig.json";
-import { SocialShare1 } from "../tools/Social";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
 
 const MinimalFooter = () => {
-  const { site_info, footer_info, social } = siteConfig;
+  const { site_info, footer_info } = siteConfig;
   const { label, company } = footer_info?.copyright || {};
 
   return (
@@ -63,16 +63,49 @@ const MinimalFooter = () => {
               <h3 className="text-text-fixed-2 text-[16px] uppercase tracking-[0.15em] font-semibold">
                 Follow Us
               </h3>
-              <ul className="flex gap-5 mt-[16px]">
-                {social.map((item, i) => (
-                  <li key={`social_share-${i}`}>
-                    {SocialShare1(
-                      item,
-                      " text-text-fixed-3 hover:text-text-fixed-2 transition-colors"
-                    )}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-center gap-[10px] mt-[16px]">
+                <a
+                  href={`https://wa.me/${(footer_info?.mobile || "").replace(/[^0-9]/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaWhatsapp className="text-[15px]" />
+                </a>
+                <a
+                  href={`tel:${footer_info?.mobile || ""}`}
+                  aria-label="Phone"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaPhone className="text-[13px]" />
+                </a>
+                <a
+                  href={`mailto:${footer_info?.email || ""}`}
+                  aria-label="Email"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaEnvelope className="text-[14px]" />
+                </a>
+                <a
+                  href="https://www.facebook.com/insiderstourism"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaFacebookF className="text-[14px]" />
+                </a>
+                <a
+                  href="https://www.instagram.com/insiderstourism"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaInstagram className="text-[15px]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

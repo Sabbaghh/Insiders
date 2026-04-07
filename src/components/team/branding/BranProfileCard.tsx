@@ -53,6 +53,12 @@ const BranProfileCard = ({ data }: TTeamMemberType) => {
             {post}
           </p>
           <div className="flex items-center justify-center gap-[8px] mt-[12px]">
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowBio(true); }}
+              className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+            >
+              <FaCircleInfo className="text-[13px]" />
+            </button>
             {social_link && (
               <a
                 href={social_link === "#" ? "#" : social_link}
@@ -78,12 +84,6 @@ const BranProfileCard = ({ data }: TTeamMemberType) => {
             >
               <FaPhone className="text-[9px]" />
             </a>
-            <button
-              onClick={(e) => { e.stopPropagation(); setShowBio(true); }}
-              className="w-[32px] h-[32px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
-            >
-              <FaCircleInfo className="text-[13px]" />
-            </button>
           </div>
         </div>
       </div>

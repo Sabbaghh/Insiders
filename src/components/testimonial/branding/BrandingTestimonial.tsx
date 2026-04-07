@@ -74,7 +74,7 @@ const BrandingTestimonial = ({
         <div className="main-section-spacing">
           <MainSectionTitle title={title} className="whitespace-nowrap" />
 
-          <div className="grid gap-5 relative mt-[50px] md:grid-cols-[1fr,54%] lg:grid-cols-[1fr,65%] xl:grid-cols-[1fr,71%] xl:mt-[90px]">
+          <div className="grid gap-5 relative mt-[30px] md:grid-cols-[1fr,54%] lg:grid-cols-[1fr,65%] xl:grid-cols-[1fr,71%] xl:mt-[50px]">
             <BranTestimonialInfo {...info} />
             <div className="bg-[#FDFAF8] dark:bg-[#1B1B1B] overflow-hidden rounded-[20px] cursor-grab">
               <Carousel

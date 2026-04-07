@@ -8,13 +8,13 @@ type Props = {
 
 const CarouselCard = ({ image, title, tag }: Props) => {
   return (
-    <div className=" h-full">
+    <div className="h-full overflow-hidden rounded-[16px]">
       <Image
         src={image}
         alt="image"
         width={800}
         height={550}
-        className="w-full h-full block rounded-none"
+        className="w-full h-full block"
         style={{ objectFit: "cover" }}
         priority
       />

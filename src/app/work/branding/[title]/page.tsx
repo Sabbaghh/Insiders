@@ -97,10 +97,10 @@ const ProjectPage = ({ params }: Props) => {
                   {/* Back button */}
                   <div className="mt-6 xl:mt-[30px]">
                     <Link
-                      href="/"
+                      href="/projects"
                       className="inline-block text-white text-[12px] md:text-[14px] uppercase tracking-[0.15em] border border-white/40 rounded-full px-[24px] py-[12px] hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      ← Back to Home
+                      ← Back to Projects
                     </Link>
                   </div>
                 </div>

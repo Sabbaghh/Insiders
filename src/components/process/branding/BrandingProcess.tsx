@@ -145,8 +145,8 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
           <div className="text-center">
             <MainSectionTitle title={title} className="max-w-[700px] mx-auto" />
             {subtitle && (
-              <p className="has_fade_anim text-[14px] md:text-[16px] xl:text-[18px] text-text-3 mt-[12px] mx-auto max-w-[500px]">
-                {subtitle}
+              <p className="has_fade_anim text-[16px] md:text-[18px] xl:text-[22px] text-text mt-[12px] mx-auto max-w-[600px] uppercase !text-center block pl-[20px] md:pl-[40px]">
+                {subtitle.replace(/^the\s+/i, "")}
               </p>
             )}
           </div>

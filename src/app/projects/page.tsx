@@ -6,6 +6,7 @@ import ScrollTop from "@/components/tools/ScrollTop";
 import RefreshGsap from "@/components/tools/RefreshGsap";
 import SeoData from "@/components/tools/SeoData";
 import ProjectsList from "@/components/work/branding/ProjectsList";
+import SectionTitle from "@/components/sectionTitle/SectionTitle";
 
 const ProjectsPage = () => {
   const works = getAllPages("/works/branding");
@@ -26,7 +27,7 @@ const ProjectsPage = () => {
       <ScrollTop />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <BrandingHeader onlyDark />
+          <BrandingHeader onlyDark customLogo="/assets/imgs/logo/black.png" />
           <main>
             <SeoData
               title="All Projects - INSIDERS Tourism"
@@ -37,13 +38,8 @@ const ProjectsPage = () => {
             {/* Page Header */}
             <section className="bg-[#FAF7F8] dark:bg-[#252525] pt-[140px] xl:pt-[180px] pb-[60px] xl:pb-[80px]">
               <div className="container">
-                <div className="text-center">
-                  <h1
-                    className="hero-title text-[32px] md:text-[48px] xl:text-[64px] !font-normal uppercase !leading-[1.4] bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift"
-                    style={{ fontFamily: "'Boldonse', sans-serif" }}
-                  >
-                    Moments We&apos;ve Created
-                  </h1>
+                <div className="flex justify-center">
+                  <SectionTitle title="Moments We've Created" heading1 />
                 </div>
               </div>
             </section>

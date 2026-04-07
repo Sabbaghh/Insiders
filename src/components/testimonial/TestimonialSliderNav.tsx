@@ -11,7 +11,7 @@ const TestimonialSliderNav = ({
   handleNext,
 }: NavigationProps) => {
   return (
-    <div className="slider_nav flex rtl:flex-row-reverse gap-[10px] static md:absolute bottom-10 lg:bottom-[60px] start-[86px] xl:start-[106px] 2xl:start-[170px]">
+    <div className="slider_nav flex rtl:flex-row-reverse gap-[10px] justify-center md:justify-start mt-[20px] md:mt-[30px] col-span-full">
       <div
         onClick={handlePrevious}
         className="testimonial_button_prev text-text-3 cursor-pointer w-[60px] h-[60px] border rounded-[50%] flex justify-center items-center transition-all duration-500 hover:border-transparent hover:text-text-2 hover:bg-background-2"

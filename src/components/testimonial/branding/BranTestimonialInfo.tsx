@@ -8,8 +8,8 @@ type Info = {
 
 const BranTestimonialInfo = ({ rating, reviews, text }: Info) => {
   return (
-    <div className="info_box bg-[#FDFAF8] dark:bg-[#1B1B1B] rounded-[20px] py-10 px-[30px] text-center ">
-      <h3 className="mt-[-7px] text-[60px] lg:text-[100px] lg:mt-[-15px] font-medium 2xl:text-[120px]">
+    <div className="info_box bg-[#FDFAF8] dark:bg-[#1B1B1B] rounded-[20px] py-10 px-[30px] text-center flex flex-col items-center justify-center h-full">
+      <h3 className="text-[28px] md:text-[34px] xl:text-[42px] 2xl:text-[52px] !font-light leading-none">
         {rating}
       </h3>
 

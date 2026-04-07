@@ -10,7 +10,6 @@ import Link from "next/link";
 import CarouselCard from "@/components/portfolio/carousel/CarouselCard";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { CarouselSkeletonCard } from "@/components/portfolio/carousel/CarouselSkeletonCard";
-import SliderNav from "@/components/portfolio/SliderNav";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCarousel } from "@/lib/plugins";
 import { cn } from "@/lib/utils";
@@ -120,7 +119,6 @@ const BrandingWorkCarousel = ({ works, title }: Props) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <SliderNav position="top" />
           </div>
         </div>
       </div>

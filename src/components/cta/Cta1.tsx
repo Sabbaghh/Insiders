@@ -4,7 +4,8 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasPinContent from "@/lib/animation/hasPinContent";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import FlexibleForm from "@/components/form/branding/FlexibleForm";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
+import siteConfig from "@/config/siteConfig.json";
 
 type Props = {
   title: string;
@@ -45,9 +46,50 @@ const Cta1 = ({ title, sub_title }: Props) => {
                 {title}
               </h2>
             </div>
-          </div>
-          <div className="max-w-[700px] mx-auto mt-[40px] xl:mt-[60px]">
-            <FlexibleForm btnText="Send Message" />
+            {/* Social Icons */}
+            <div className="has_fade_anim flex items-center justify-center gap-[12px] mt-[30px] xl:mt-[40px]">
+              <a
+                href={`https://wa.me/${(siteConfig.footer_info?.mobile || "").replace(/[^0-9]/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaWhatsapp className="text-[16px]" />
+              </a>
+              <a
+                href={`tel:${siteConfig.footer_info?.mobile || ""}`}
+                aria-label="Phone"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaPhone className="text-[14px]" />
+              </a>
+              <a
+                href={`mailto:${siteConfig.footer_info?.email || ""}`}
+                aria-label="Email"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaEnvelope className="text-[15px]" />
+              </a>
+              <a
+                href="https://www.facebook.com/insiderstourism"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaFacebookF className="text-[15px]" />
+              </a>
+              <a
+                href="https://www.instagram.com/insiderstourism"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaInstagram className="text-[16px]" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
