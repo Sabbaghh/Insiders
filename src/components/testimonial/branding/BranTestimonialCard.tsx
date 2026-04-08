@@ -16,13 +16,13 @@ type testimonialProps = {
   };
 };
 
-const BranTestimonialCard = ({ icon, text, author }: testimonialProps) => {
+const BranTestimonialCard = ({ text, author }: testimonialProps) => {
   return (
     <div className="pt-10 pb-[37px] px-[30px] lg:pt-[60px] lg:pb-[57px] lg:px-[50px] h-full 2xl:px-[70px] relative before:absolute before:content-[''] before:w-[1px] before:h-[150%] before:bg-[#EFEFEF] dark:before:bg-[#2C2C2C] before:top-0 before:start-[-25px]">
       <div className=" flex flex-col justify-between h-full">
         <div>
           <div>
-            <Image src={icon} width={52} height={37} alt="icon" />
+            <Image src="/assets/qoute.png" width={120} height={85} alt="quote" className="w-[80px] lg:w-[100px] 2xl:w-[120px] h-auto" />
           </div>
           <div className="mt-4 md:mt-6">
             <p
