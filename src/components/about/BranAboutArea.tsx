@@ -33,22 +33,24 @@ const BranAboutArea = ({ aboutData }: Props) => {
       <div>
         <div>
           <p
-            className="!leading-[1.3] text-[10px] mt-0 md:text-[14px] lg:text-[16px] xl:text-[20px] xl:mt-[-8px]
-              2xl:text-[26px] 2xl:-mt-3 text-white/50 !font-extralight has_text_mov_anim"
+            className="!leading-[1.3] text-[14px] mt-0 md:text-[14px] lg:text-[16px] xl:text-[20px] xl:mt-[-8px]
+              2xl:text-[20px] 2xl:mt-[-8px] text-white/50 !font-extralight has_text_mov_anim"
             dangerouslySetInnerHTML={{ __html: description }}
           />
           {/* Quick Links */}
-          <div className="mt-10 xl:mt-[40px] has_fade_anim flex items-center gap-0 flex-wrap" data-fade-from="left">
-            {[
-              { label: "We Are\nInsiders", target: "team" },
-              { label: "Moments We've\nCreated", target: "work" },
-              { label: "Our\nEdge", target: "process" },
-              { label: "Our Global\nNetwork", target: "wingman" },
-              { label: "Show Me\nWhat's Inside", target: "cta" },
-            ].map((link, i) => (
-              <span key={link.target} className="flex items-center">
-                {i > 0 && <span className="text-white/30 mx-[20px] md:mx-[28px]">|</span>}
+          {/* Quick Links — grid on mobile, inline on desktop */}
+          <div className="mt-10 xl:mt-[40px] has_fade_anim" data-fade-from="left">
+            {/* Mobile grid */}
+            <div className="grid grid-cols-3 gap-[10px] md:hidden">
+              {[
+                { label: "We Are Insiders", target: "team" },
+                { label: "Moments We've Created", target: "work" },
+                { label: "Our Edge", target: "process" },
+                { label: "Our Global Network", target: "wingman" },
+                { label: "Show Me What's Inside", target: "cta" },
+              ].map((link) => (
                 <button
+                  key={link.target}
                   onClick={() => {
                     const el = document.getElementById(link.target);
                     if (el) {
@@ -57,12 +59,39 @@ const BranAboutArea = ({ aboutData }: Props) => {
                       document.documentElement.scrollTop = y;
                     }
                   }}
-                  className="text-white/60 text-[12px] md:text-[13px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 leading-[1.4] whitespace-pre-line text-center min-w-[80px] md:min-w-[90px]"
+                  className="text-white/60 text-[11px] uppercase tracking-[0.05em] hover:text-white transition-colors duration-200 leading-[1.3] text-center border border-white/20 rounded-[8px] py-[8px] px-[6px]"
                 >
                   {link.label}
                 </button>
-              </span>
-            ))}
+              ))}
+            </div>
+            {/* Desktop inline */}
+            <div className="hidden md:flex items-center gap-0 flex-wrap">
+              {[
+                { label: "We Are\nInsiders", target: "team" },
+                { label: "Moments We've\nCreated", target: "work" },
+                { label: "Our\nEdge", target: "process" },
+                { label: "Our Global\nNetwork", target: "wingman" },
+                { label: "Show Me\nWhat's Inside", target: "cta" },
+              ].map((link, i) => (
+                <span key={link.target} className="flex items-center">
+                  {i > 0 && <span className="text-white/30 mx-[20px] md:mx-[28px]">|</span>}
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById(link.target);
+                      if (el) {
+                        const y = el.getBoundingClientRect().top + window.pageYOffset;
+                        document.body.scrollTop = y;
+                        document.documentElement.scrollTop = y;
+                      }
+                    }}
+                    className="text-white/60 text-[12px] md:text-[13px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200 leading-[1.4] whitespace-pre-line text-center min-w-[80px] md:min-w-[90px]"
+                  >
+                    {link.label}
+                  </button>
+                </span>
+              ))}
+            </div>
           </div>
 
           {aboutData.action_btn?.enable && (

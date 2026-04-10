@@ -90,9 +90,9 @@ const BrandingHero = ({
     .replace(/\{|\}/g, "");
 
   const titleClasses = cn(
-    "hero-title text-white uppercase !leading-[1.4] !font-normal text-[32px] mt-0 mb-0 sm:text-[32px] md:text-[50px] xl:text-[68px] 2xl:text-[100px]",
+    "hero-title text-white uppercase !leading-[1.4] !font-normal text-[32px] mt-0 mb-0 sm:text-[32px] md:text-[50px] xl:text-[68px] 2xl:text-[68px]",
     layout === "box" &&
-      "xxl:text-[105px] 2xl:mt-0 2xl:mb-[-7px] 2xl:max-w-[900px]"
+      "2xl:max-w-[900px]"
   );
 
   return (
@@ -118,28 +118,28 @@ const BrandingHero = ({
       {/* Dark Overlay */}
       <div className="absolute w-full h-full -z-[5] top-0 start-0 bg-black/60" />
 
-      <div className="container flex items-center justify-center min-h-screen">
-        <div className="w-full lg:w-[70%] relative mx-auto lg:ml-[20%]">
-          {/* Logo Icon — parallax */}
-          <div
-            ref={iconRef}
-            className="absolute -top-[80px] right-[40px] md:-top-[120px] md:right-[80px] xl:-top-[160px] xl:right-[100px] z-0 pointer-events-none"
-          >
-            <Image
-              src="/assets/imgs/logoicon.png"
-              width={1000}
-              height={1000}
-              alt="INSIDERS icon"
-              unoptimized
-              className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] xl:w-[450px] xl:h-[450px] drop-shadow-lg opacity-80"
-            />
-          </div>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-[90%] max-w-[900px] mx-auto relative">
           <div
             ref={containerRef}
-            className="pb-[10px] md:pb-[12px] lg:pb-[14px] xl:pb-[16px] 2xl:pb-[20px]"
+            className="pb-[10px] md:pb-[12px] lg:pb-[14px] xl:pb-[16px] 2xl:pb-[16px] relative"
           >
+            {/* Logo Icon — parallax, behind "INSIDE" */}
+            <div
+              ref={iconRef}
+              className="absolute left-[-5%] top-[-110%] md:left-[25%] md:top-[-80%] z-0 pointer-events-none"
+            >
+              <Image
+                src="/assets/imgs/logoicon.png"
+                width={1000}
+                height={1000}
+                alt="INSIDERS icon"
+                unoptimized
+                className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] xl:w-[450px] xl:h-[450px] drop-shadow-lg opacity-80"
+              />
+            </div>
             <h1
-              className={`${titleClasses} font-boldonse`}
+              className={`${titleClasses} font-boldonse relative z-[1]`}
               style={{ fontFamily: "'Boldonse', sans-serif" }}
               dangerouslySetInnerHTML={{ __html: titleHtml }}
             />
