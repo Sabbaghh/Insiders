@@ -1,15 +1,14 @@
 "use client";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
-const ScrollToSection = () => {
+const ScrollHandler = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const target = searchParams.get("scrollTo");
     if (!target) return;
 
-    // Wait for GSAP/ScrollSmoother to initialize
     const timer = setTimeout(() => {
       const el = document.getElementById(target);
       if (el) {
@@ -23,6 +22,14 @@ const ScrollToSection = () => {
   }, [searchParams]);
 
   return null;
+};
+
+const ScrollToSection = () => {
+  return (
+    <Suspense fallback={null}>
+      <ScrollHandler />
+    </Suspense>
+  );
 };
 
 export default ScrollToSection;
