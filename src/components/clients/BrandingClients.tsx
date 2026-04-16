@@ -43,7 +43,9 @@ const BrandingClients = ({ brands }: Props) => {
           <div className="clients_area_inner py-[29px] mt-[50px] xl:py-[49px] xl:mt-[90px]">
             <ImageAutoSlider
               slides={brands || []}
-              imageClassName="opacity-80"
+              height={50}
+              width={120}
+              imageClassName="opacity-70 max-w-[120px]"
             />
           </div>
         </div>

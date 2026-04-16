@@ -62,7 +62,7 @@ const ProjectsList = ({ projects }: { projects: Project[] }) => {
   return (
     <div>
       {/* Search */}
-      <div className="max-w-[560px] mx-auto mb-[40px] xl:mb-[60px]">
+      <div className="max-w-[560px] mb-[40px] xl:mb-[60px]">
         <div className="relative group">
           <div className="absolute inset-y-0 left-[20px] flex items-center pointer-events-none text-[#6D6E71] group-focus-within:text-[#E02379] transition-colors">
             <FaMagnifyingGlass className="text-[14px]" />

@@ -6,6 +6,7 @@ import hasPinContent from "@/lib/animation/hasPinContent";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import MainSectionTitle from "@/components/sectionTitle/MainSectionTitle";
 import { FaEnvelope, FaPhone, FaLinkedinIn } from "react-icons/fa6";
+import "flag-icons/css/flag-icons.min.css";
 
 type WingmanPartner = {
   company: string;
@@ -23,28 +24,28 @@ const partners: WingmanPartner[] = [
     contact: "Olga Kharlenok",
     email: "olga@matchpoints.ru",
     country: "Russia",
-    flag: "🇷🇺",
+    flag: "ru",
   },
   {
     company: "Cashel Representation",
     contact: "Alia Saunders",
     email: "alia@cashelrepresentation.com",
     country: "United Kingdom",
-    flag: "🇬🇧",
+    flag: "gb",
   },
   {
     company: "The Collection",
     contact: "Eliane Taunay",
     email: "eliane@thecollectiondestinations.com",
     country: "Brazil",
-    flag: "🇧🇷",
+    flag: "br",
   },
   {
     company: "EDP Global",
     contact: "Wim Crabbe",
     email: "wim@edpglobal.com",
     country: "United States",
-    flag: "🇺🇸",
+    flag: "us",
   },
 ];
 
@@ -67,7 +68,7 @@ const BrandingWingman = () => {
     <section
       id="wingman"
       ref={pinElement}
-      className="main-section-style bg-background"
+      className="main-section-style bg-[#FAF7F8] dark:bg-[#252525]"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
@@ -84,8 +85,8 @@ const BrandingWingman = () => {
                 data-delay={index * 0.15}
               >
                 {/* Flag */}
-                <div className="text-[50px] xl:text-[64px] leading-none">
-                  {partner.flag}
+                <div className="flex justify-center">
+                  <span className={`fi fi-${partner.flag} text-[40px] xl:text-[50px] rounded-[6px]`} style={{ width: "1.6em", lineHeight: "1.2em" }} />
                 </div>
 
                 {/* Country */}

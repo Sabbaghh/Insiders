@@ -45,7 +45,7 @@ const ImageAutoSlider = ({
                 <ImageComponent
                   width={width}
                   height={height}
-                  className={cn("w-auto", imageClassName)}
+                  className={cn("w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500", imageClassName)}
                   customHeight={`${height}px`}
                   src={slide?.image?.dark}
                   darkSrc={slide?.image?.light}

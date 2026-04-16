@@ -16,10 +16,12 @@ import ScrollTop from "@/components/tools/ScrollTop";
 import BrandingHeader from "@/components/headers/BrandingHeader";
 import MinimalFooter from "@/components/footer/MinimalFooter";
 import CustomCursor from "@/components/tools/CustomCursor";
+import ScrollToSection from "@/components/tools/ScrollToSection";
+import FloatingSocials from "@/components/tools/FloatingSocials";
 
 const Home = () => {
   const { data: hero } = getMainPage("/heros/branding-hero.mdx");
-  const works = getAllPages("/works/branding");
+  const works = getAllPages("/works/branding").reverse();
   const { data: work } = getMainPage("/works/branding/_main.mdx");
   const { data: funFact } = getMainPage("/funFact/branding-fun-fact.mdx");
   const { data: process } = getMainPage("/process/branding-process.mdx");
@@ -36,9 +38,11 @@ const Home = () => {
       <ScrollSmootherComponent />
       <ScrollTop />
       <CustomCursor />
+      <FloatingSocials />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <BrandingHeader onlyDark />
+          <BrandingHeader onlyDark showNav />
+          <ScrollToSection />
           <main>
             <SeoData
               title="INSIDERS Tourism — Destination Management Insider | UAE"

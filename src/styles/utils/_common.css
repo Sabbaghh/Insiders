@@ -54,11 +54,11 @@
 }
 
 .main-section-spacing {
-  @apply py-[60px] xl:py-[120px] 2xl:py-[150px]
+  @apply py-[60px] lg:py-[80px] xl:py-[150px] 2xl:py-[180px] 2xl:px-[80px]
 }
 
 .main-section-style {
-  @apply overflow-hidden z-10 mt-[-130px] pb-[130px] relative rounded-tl-[30px] rounded-tr-[30px] lg:rounded-tl-[50px] lg:rounded-tr-[50px] xl:rounded-tl-[80px] xl:rounded-tr-[80px]
+  @apply overflow-hidden z-10 mt-[-130px] pb-[250px] relative rounded-tl-[30px] rounded-tr-[30px] lg:rounded-tl-[50px] lg:rounded-tr-[50px] xl:rounded-tl-[80px] xl:rounded-tr-[80px]
 }
 
 .service-details-inner {

@@ -13,6 +13,7 @@ import { CarouselSkeletonCard } from "@/components/portfolio/carousel/CarouselSk
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCarousel } from "@/lib/plugins";
 import { cn } from "@/lib/utils";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import "@/styles/swiper-slider.css";
 import "swiper/css";
@@ -119,6 +120,13 @@ const BrandingWorkCarousel = ({ works, title }: Props) => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            {/* Navigation Arrows */}
+            <button className="portfolio-button-prev absolute left-[10px] md:left-[30px] top-1/2 -translate-y-1/2 z-20 w-[44px] h-[44px] md:w-[50px] md:h-[50px] rounded-full border border-[#DEDEDE] dark:border-[#434343] bg-white/80 dark:bg-black/50 flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors backdrop-blur-sm">
+              <FaArrowLeft className="text-[14px]" />
+            </button>
+            <button className="portfolio-button-next absolute right-[10px] md:right-[30px] top-1/2 -translate-y-1/2 z-20 w-[44px] h-[44px] md:w-[50px] md:h-[50px] rounded-full border border-[#DEDEDE] dark:border-[#434343] bg-white/80 dark:bg-black/50 flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors backdrop-blur-sm">
+              <FaArrowRight className="text-[14px]" />
+            </button>
           </div>
         </div>
       </div>
