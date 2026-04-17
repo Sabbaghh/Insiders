@@ -18,6 +18,7 @@ import MinimalFooter from "@/components/footer/MinimalFooter";
 import CustomCursor from "@/components/tools/CustomCursor";
 import ScrollToSection from "@/components/tools/ScrollToSection";
 import FloatingSocials from "@/components/tools/FloatingSocials";
+import SectionSpotlight from "@/components/tools/SectionSpotlight";
 
 const Home = () => {
   const { data: hero } = getMainPage("/heros/branding-hero.mdx");
@@ -39,6 +40,7 @@ const Home = () => {
       <ScrollTop />
       <CustomCursor />
       <FloatingSocials />
+      <SectionSpotlight />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <BrandingHeader onlyDark showNav />

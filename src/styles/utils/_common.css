@@ -61,6 +61,63 @@
   @apply overflow-hidden z-10 mt-[-130px] pb-[250px] relative rounded-tl-[30px] rounded-tr-[30px] lg:rounded-tl-[50px] lg:rounded-tr-[50px] xl:rounded-tl-[80px] xl:rounded-tr-[80px]
 }
 
+.main-section-style::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+}
+
+.dark .main-section-style::before {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+}
+
+.main-section-style::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(#E02379 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  -webkit-mask-image: radial-gradient(
+    circle 220px at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    circle 220px at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 75%
+  );
+}
+
+.main-section-style:hover::after {
+  opacity: 1;
+}
+
+.main-section-style > * {
+  position: relative;
+  z-index: 1;
+}
+
 .service-details-inner {
 
   p {
