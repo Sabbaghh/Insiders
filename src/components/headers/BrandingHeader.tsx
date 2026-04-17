@@ -57,7 +57,7 @@ const BrandingHeader = ({ maxWidth, onlyDark = false, customLogo, showNav = fals
                   {i > 0 && <span className="w-[4px] h-[4px] rounded-full bg-white/30" />}
                   <button
                     onClick={() => scrollTo(link.target)}
-                    className="text-white/60 text-[11px] xl:text-[12px] uppercase tracking-[0.1em] hover:text-white transition-colors duration-200"
+                    className="text-white/80 text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.1em] hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </button>
