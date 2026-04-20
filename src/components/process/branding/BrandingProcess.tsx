@@ -198,20 +198,10 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                     </div>
 
                     {/* Desktop layout */}
-                    <div className="hidden md:grid md:grid-cols-2">
+                    <div className="hidden md:grid md:grid-cols-2 md:items-center">
                       {isLeft ? (
                         <>
                           <div className="relative text-end pr-[60px] xl:pr-[80px]">
-                            {/* Stamp image — behind text, aligned left */}
-                            <div className="process-stamp-wrap absolute top-[20%] left-[60px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
-                              <Image
-                                src={item.image}
-                                width={300}
-                                height={300}
-                                alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain opacity-[0.35] rotate-[-8deg]"
-                              />
-                            </div>
                             <div className="relative z-[1]">
                               <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
                                 Step {formatSerialNo(item.serial_no)}
@@ -231,22 +221,32 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                               )}
                             </div>
                           </div>
-                          <div />
-                        </>
-                      ) : (
-                        <>
-                          <div />
-                          <div className="relative pl-[60px] xl:pl-[80px]">
-                            {/* Stamp image — behind text, aligned right */}
-                            <div className="process-stamp-wrap absolute top-[20%] right-[60px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
+                          <div className="pl-[60px] xl:pl-[80px] flex justify-start">
+                            <div className="process-stamp-wrap passport-stamp" style={{ opacity: 0 }}>
                               <Image
                                 src={item.image}
                                 width={300}
                                 height={300}
                                 alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain opacity-[0.35] rotate-[8deg]"
+                                className="w-[150px] h-[150px] xl:w-[190px] xl:h-[190px] object-contain rotate-[-6deg]"
                               />
                             </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="pr-[60px] xl:pr-[80px] flex justify-end">
+                            <div className="process-stamp-wrap passport-stamp" style={{ opacity: 0 }}>
+                              <Image
+                                src={item.image}
+                                width={300}
+                                height={300}
+                                alt={item.title}
+                                className="w-[150px] h-[150px] xl:w-[190px] xl:h-[190px] object-contain rotate-[6deg]"
+                              />
+                            </div>
+                          </div>
+                          <div className="relative pl-[60px] xl:pl-[80px]">
                             <div className="relative z-[1]">
                               <span className="text-[13px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
                                 Step {formatSerialNo(item.serial_no)}
@@ -271,18 +271,8 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                     </div>
 
                     {/* Mobile layout */}
-                    <div className="md:hidden pl-[50px] relative">
-                      {/* Stamp image — behind text */}
-                      <div className="process-stamp-wrap absolute top-1/2 right-[10px] -translate-y-1/2 z-0 pointer-events-none" style={{ opacity: 0 }}>
-                        <Image
-                          src={item.image}
-                          width={200}
-                          height={200}
-                          alt={item.title}
-                          className="w-[100px] h-[100px] object-contain opacity-[0.3] rotate-[-6deg]"
-                        />
-                      </div>
-                      <div className="relative z-[1]">
+                    <div className="md:hidden pl-[50px] relative flex items-start gap-[14px]">
+                      <div className="flex-1">
                         <span className="text-[12px] text-[#6D6E71] dark:text-text-fixed-3 uppercase tracking-[0.2em]">
                           Step {formatSerialNo(item.serial_no)}
                         </span>
@@ -299,6 +289,15 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                             {item.description}
                           </p>
                         )}
+                      </div>
+                      <div className="process-stamp-wrap passport-stamp shrink-0" style={{ opacity: 0 }}>
+                        <Image
+                          src={item.image}
+                          width={200}
+                          height={200}
+                          alt={item.title}
+                          className="w-[80px] h-[80px] object-contain rotate-[-6deg]"
+                        />
                       </div>
                     </div>
                   </div>
