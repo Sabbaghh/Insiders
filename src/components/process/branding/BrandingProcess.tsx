@@ -209,7 +209,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 width={300}
                                 height={300}
                                 alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.35] rotate-[-8deg]"
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain opacity-[0.35] rotate-[-8deg]"
                               />
                             </div>
                             <div className="relative z-[1]">
@@ -244,7 +244,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                                 width={300}
                                 height={300}
                                 alt={item.title}
-                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain rounded-full opacity-[0.35] rotate-[8deg]"
+                                className="w-[140px] h-[140px] xl:w-[180px] xl:h-[180px] object-contain opacity-[0.35] rotate-[8deg]"
                               />
                             </div>
                             <div className="relative z-[1]">
@@ -279,7 +279,7 @@ const BrandingProcess = ({ title, subtitle, process_list }: Props) => {
                           width={200}
                           height={200}
                           alt={item.title}
-                          className="w-[100px] h-[100px] object-contain rounded-full opacity-[0.3] rotate-[-6deg]"
+                          className="w-[100px] h-[100px] object-contain opacity-[0.3] rotate-[-6deg]"
                         />
                       </div>
                       <div className="relative z-[1]">
