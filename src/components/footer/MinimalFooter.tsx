@@ -1,9 +1,11 @@
 import Logo from "@/components/elements/logo/Logo";
 import siteConfig from "@/config/siteConfig.json";
-import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 
 const MinimalFooter = () => {
-  const { site_info, footer_info } = siteConfig;
+  const { site_info, footer_info, social } = siteConfig;
+  const socialLink = (name: string) =>
+    social.find((s) => s.name === name)?.link || "#";
   const { company } = footer_info?.copyright || {};
   const currentYear = new Date().getFullYear();
 
@@ -89,7 +91,7 @@ const MinimalFooter = () => {
                   <FaEnvelope className="text-[14px]" />
                 </a>
                 <a
-                  href="https://www.facebook.com/insiderstourism"
+                  href={socialLink("Fb")}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -98,13 +100,31 @@ const MinimalFooter = () => {
                   <FaFacebookF className="text-[14px]" />
                 </a>
                 <a
-                  href="https://www.instagram.com/insiderstourism"
+                  href={socialLink("Ig")}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
                 >
                   <FaInstagram className="text-[15px]" />
+                </a>
+                <a
+                  href={socialLink("Li")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaLinkedinIn className="text-[14px]" />
+                </a>
+                <a
+                  href={socialLink("Yt")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-[40px] h-[40px] rounded-full border border-[#333] flex items-center justify-center text-text-fixed-3 hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+                >
+                  <FaYoutube className="text-[15px]" />
                 </a>
               </div>
             </div>

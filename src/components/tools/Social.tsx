@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 
 // lib
@@ -73,6 +74,17 @@ export const SocialShare1 = (item: SocialType, className?: string) => {
           className={cn("relative z-10", className)}
         >
           <FaLinkedin />
+        </Link>
+      );
+    case "Yt":
+      return (
+        <Link
+          href={item.link}
+          target="_blank"
+          key={item.link}
+          className={cn("relative z-10", className)}
+        >
+          <FaYoutube />
         </Link>
       );
   }

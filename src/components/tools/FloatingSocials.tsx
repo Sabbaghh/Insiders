@@ -1,14 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import siteConfig from "@/config/siteConfig.json";
+
+const socialLink = (name: string) =>
+  siteConfig.social.find((s) => s.name === name)?.link || "#";
 
 const links = [
   { icon: FaWhatsapp, getHref: (info: any) => `https://wa.me/${(info?.mobile || "").replace(/[^0-9]/g, "")}`, label: "WhatsApp", size: "text-[15px]" },
   { icon: FaPhone, getHref: (info: any) => `tel:${info?.mobile || ""}`, label: "Phone", size: "text-[12px]" },
   { icon: FaEnvelope, getHref: (info: any) => `mailto:${info?.email || ""}`, label: "Email", size: "text-[13px]" },
-  { icon: FaFacebookF, getHref: () => "https://www.facebook.com/insiderstourism", label: "Facebook", size: "text-[13px]" },
-  { icon: FaInstagram, getHref: () => "https://www.instagram.com/insiderstourism", label: "Instagram", size: "text-[14px]" },
+  { icon: FaFacebookF, getHref: () => socialLink("Fb"), label: "Facebook", size: "text-[13px]" },
+  { icon: FaInstagram, getHref: () => socialLink("Ig"), label: "Instagram", size: "text-[14px]" },
+  { icon: FaLinkedinIn, getHref: () => socialLink("Li"), label: "LinkedIn", size: "text-[13px]" },
+  { icon: FaYoutube, getHref: () => socialLink("Yt"), label: "YouTube", size: "text-[14px]" },
 ];
 
 const FloatingSocials = () => {

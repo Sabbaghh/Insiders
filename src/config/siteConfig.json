@@ -23,8 +23,8 @@
       "link": "https://maps.app.goo.gl/Dubai",
       "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828498761!2d54.89781049848965!3d25.076280448033498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1705913587617!5m2!1sen!2s"
     },
-    "email": "info@insiderstourism.com",
-    "mobile": "+971 XX XXX XXXX",
+    "email": "info@insiders-uae.com",
+    "mobile": "+971 44539822",
     "open_date": "Sun - Thu",
     "open_time": "9:00 am - 6:00 pm",
     "copyright": {
@@ -39,17 +39,22 @@
   "social": [
     {
       "name": "Ig",
-      "link": "https://www.instagram.com/insiderstourism",
+      "link": "https://www.instagram.com/insiders.tourism/",
       "value": ""
     },
     {
       "name": "Fb",
-      "link": "https://www.facebook.com/insiderstourism",
+      "link": "https://www.facebook.com/InsidersTourism/",
       "value": ""
     },
     {
       "name": "Li",
-      "link": "https://www.linkedin.com/company/insiderstourism",
+      "link": "https://www.linkedin.com/company/insiders-tourism/",
+      "value": ""
+    },
+    {
+      "name": "Yt",
+      "link": "https://www.youtube.com/@InsidersTourism",
       "value": ""
     }
   ]

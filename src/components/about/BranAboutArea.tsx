@@ -3,9 +3,13 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import { useDirection } from "@/context/app.context";
-import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import { ActionBtnType } from "@/types";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+import siteConfig from "@/config/siteConfig.json";
+
+const socialLink = (name: string) =>
+  siteConfig.social.find((s) => s.name === name)?.link || "#";
 
 type Props = {
   aboutData: {
@@ -59,17 +63,26 @@ const BranAboutArea = ({ aboutData }: Props) => {
                 </button>
                 {/* Mobile social icons */}
                 <div className="flex items-center gap-[8px] md:hidden">
-                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                  <a href={`https://wa.me/${(siteConfig.footer_info?.mobile || "").replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
                     <FaWhatsapp className="text-[15px]" />
                   </a>
-                  <a href="tel:" aria-label="Phone" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                  <a href={`tel:${siteConfig.footer_info?.mobile || ""}`} aria-label="Phone" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
                     <FaPhone className="text-[12px]" />
                   </a>
-                  <a href="mailto:info@insiderstourism.com" aria-label="Email" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                  <a href={`mailto:${siteConfig.footer_info?.email || ""}`} aria-label="Email" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
                     <FaEnvelope className="text-[13px]" />
                   </a>
-                  <a href="https://www.instagram.com/insiderstourism" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                  <a href={socialLink("Fb")} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                    <FaFacebookF className="text-[13px]" />
+                  </a>
+                  <a href={socialLink("Ig")} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
                     <FaInstagram className="text-[14px]" />
+                  </a>
+                  <a href={socialLink("Li")} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                    <FaLinkedinIn className="text-[13px]" />
+                  </a>
+                  <a href={socialLink("Yt")} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-[34px] h-[34px] rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:border-white hover:text-white transition-colors">
+                    <FaYoutube className="text-[14px]" />
                   </a>
                 </div>
               </div>

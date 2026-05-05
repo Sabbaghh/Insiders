@@ -4,8 +4,11 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasPinContent from "@/lib/animation/hasPinContent";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp, FaPhone, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import siteConfig from "@/config/siteConfig.json";
+
+const socialLink = (name: string) =>
+  siteConfig.social.find((s) => s.name === name)?.link || "#";
 
 type Props = {
   title: string;
@@ -72,7 +75,7 @@ const Cta1 = ({ title, sub_title }: Props) => {
                 <FaEnvelope className="text-[15px]" />
               </a>
               <a
-                href="https://www.facebook.com/insiderstourism"
+                href={socialLink("Fb")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -81,13 +84,31 @@ const Cta1 = ({ title, sub_title }: Props) => {
                 <FaFacebookF className="text-[15px]" />
               </a>
               <a
-                href="https://www.instagram.com/insiderstourism"
+                href={socialLink("Ig")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
               >
                 <FaInstagram className="text-[16px]" />
+              </a>
+              <a
+                href={socialLink("Li")}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaLinkedinIn className="text-[15px]" />
+              </a>
+              <a
+                href={socialLink("Yt")}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-[44px] h-[44px] rounded-full border border-[#DEDEDE] dark:border-[#434343] flex items-center justify-center text-[#6D6E71] hover:border-[#E02379] hover:text-[#E02379] transition-colors"
+              >
+                <FaYoutube className="text-[16px]" />
               </a>
             </div>
           </div>
