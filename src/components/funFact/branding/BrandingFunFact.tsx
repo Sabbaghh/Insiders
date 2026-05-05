@@ -14,7 +14,7 @@ const stats = [
   { value: 35, suffix: "", label: "Years Collective Experience" },
   { value: 7, suffix: "", label: "Emirates Covered" },
   { value: 250, suffix: "+", label: "Events Delivered" },
-  { value: 10000, suffix: "", label: "Guests Hosted" },
+  { value: 10, suffix: "K+", label: "Guests Hosted" },
   { value: 11, suffix: "+", label: "Years of Trusted Partnerships" },
 ];
 
@@ -51,10 +51,10 @@ const BrandingFunFact = ({ title }: Props) => {
                   className="has_fade_anim text-center"
                   data-delay={0.15 * (i + 1)}
                 >
-                  <h3 className="text-[28px] md:text-[34px] xl:text-[42px] 2xl:text-[52px] !font-light leading-none">
+                  <h3 className="text-[28px] md:text-[34px] xl:text-[42px] 2xl:text-[52px] !font-boldonse !leading-[1.4] text-[#6D6E71] dark:text-white/70">
                     <span
                       data-count={stat.value}
-                      className="has_count_anim"
+                      className="has_count_anim !font-boldonse"
                     >
                       {stat.value}
                     </span>

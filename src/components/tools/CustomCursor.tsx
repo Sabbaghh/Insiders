@@ -111,18 +111,33 @@ const CustomCursor = () => {
       {/* Small dot */}
       <div
         ref={dotRef}
-        className="fixed z-[99999] pointer-events-none mix-blend-difference"
+        className="fixed z-[2147483647] pointer-events-none"
         style={{ top: 0, left: 0 }}
       >
-        <div className="w-[8px] h-[8px] rounded-full bg-white" style={{ marginLeft: -4, marginTop: -4 }} />
+        <div
+          className="w-[8px] h-[8px] rounded-full bg-white"
+          style={{
+            marginLeft: -4,
+            marginTop: -4,
+            boxShadow: "0 0 0 1px rgba(0,0,0,0.55), 0 0 8px rgba(0,0,0,0.35)",
+          }}
+        />
       </div>
       {/* Outer circle */}
       <div
         ref={circleRef}
-        className="fixed z-[99998] pointer-events-none mix-blend-difference"
+        className="fixed z-[2147483646] pointer-events-none"
         style={{ top: 0, left: 0 }}
       >
-        <div className="w-[40px] h-[40px] rounded-full bg-white/80" style={{ marginLeft: -20, marginTop: -20 }} />
+        <div
+          className="w-[40px] h-[40px] rounded-full"
+          style={{
+            marginLeft: -20,
+            marginTop: -20,
+            border: "1px solid rgba(255,255,255,0.85)",
+            boxShadow: "0 0 0 1px rgba(0,0,0,0.45), 0 0 14px rgba(0,0,0,0.25)",
+          }}
+        />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { convertWithBrSpan } from "@/lib/helper/converter";
 import { cn } from "@/lib/utils";
 
-const SHARED = "text-[16px] sm:text-[18px] md:text-[20px] md:mt-[-6px] lg:text-[24px] lg:mt-[-8px] xl:text-[32px] xl:mt-[-10px] 2xl:text-[38px] 2xl:mt-[-14px] leading-[1.08] font-heading !font-light bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift";
+const SHARED = "text-[16px] sm:text-[18px] md:text-[20px] md:mt-[-6px] lg:text-[24px] lg:mt-[-8px] xl:text-[32px] xl:mt-[-10px] 2xl:text-[38px] 2xl:mt-[-14px] !leading-[1.4] !font-boldonse bg-gradient-to-r from-[#95298C] via-[#E02379] to-[#95298C] bg-clip-text text-transparent pl-[20px] md:pl-[40px] bg-[length:200%_100%] animate-gradient-shift";
 
 const SectionTitle = ({
   title,

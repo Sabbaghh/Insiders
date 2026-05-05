@@ -10,7 +10,7 @@ const MinimalFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="main-section-style !pb-0 bg-background-fixed">
+    <footer id="footer" className="main-section-style !pb-0 bg-background-fixed">
       <div className="container">
         <div className="section-spacing-top pb-[54px] xl:pb-[94px]">
           {/* Top row: Logo */}
