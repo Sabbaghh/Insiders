@@ -25,10 +25,10 @@ const WheelsPage = () => {
       />
       <CustomCursor />
       <SectionSpotlight />
-      <BrandingHeader onlyDark showNav sticky />
+      <BrandingHeader onlyDark showNav />
       <main>
         {/* Gallery */}
-        <section id="wheels-gallery" className="bg-black pt-[120px] md:pt-[140px] pb-[120px]">
+        <section id="wheels-gallery" className="bg-black pt-[120px] md:pt-[140px] pb-[260px]">
           <WheelsGallery images={images} />
         </section>
       </main>
